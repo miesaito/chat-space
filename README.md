@@ -38,7 +38,7 @@
 
 ### Association
 - belongs_to :user
-
+h
 
 ## membersテーブル
 
