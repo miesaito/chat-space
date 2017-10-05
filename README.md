@@ -15,12 +15,17 @@
 |updated_at|datetime|null: false|
 |group_id|integer|null: false, foreign_key: true|
 
+### Association
+- has_many :groups, through:members
+- has_many :messages
+- has_many :members
+
 ## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|group_name|text|null: false, unique: true|
+|name|text|null: false, unique: true|
 
 ### Association
 - has_many :user
@@ -38,7 +43,7 @@
 
 ### Association
 - belongs_to :user
-h
+
 
 ## membersテーブル
 
