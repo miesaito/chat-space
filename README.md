@@ -1,24 +1,57 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, foreign_key: true, index: true, index: true|
+|name|text|null: false, index: true|
+|email|text|null: false, unique: true, index: true|
+|encrypted_password|text|null: false|
+|sign_in_count|integer|null: false|
+|current_sign_in_at|datetime|null: false|
+|last_sign_in_at|datetime|null: false|
+|current_sign_in_ip|integer|null: false|
+|last_sign_in_ip|integer|null: false|
+|createrd_at|datetime|null: false, index: true|
+|updated_at|datetime|null: false|
+|group_id|integer|null: false, foreign_key: true|
 
-Things you may want to cover:
+### Association
+- has_many :groups, through:members
+- has_many :messages
+- has_many :members
 
-* Ruby version
+## groupテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, foreign_key: true, index: true|
+|name|text|null: false, unique: true, index: true|
 
-* Configuration
+### Association
+- has_many :user, through:members
+- has_many :messages
 
-* Database creation
+## messagesテーブル
 
-* Database initialization
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true, index: true|
+|text|text|
+|image|text|
+|createrd_at|datetime|null: false, index: true|
+|updated_at|datetime|null: false|
 
-* How to run the test suite
+### Association
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## membersテーブル
 
-* ...
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true, index: true|
+|group_id|integer|null: false, foreign_key: true, index: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
