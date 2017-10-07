@@ -1,0 +1,53 @@
+.contents.clearfix
+  .left-contents
+    .left-contents-top
+      %p USERNAME
+      %p
+        %a{href: ''}
+          %i.fa.fa-cog
+        %a{href: ''}
+          %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
+
+    .left-contents-bottom
+      .group-blocks
+        .group-name
+          %h3 グループ１
+        .group-text
+          %p
+            まだメッセージはありません。
+      .group-blocks
+        .group-name
+          %h3 グループ２
+        .group-text
+          %p
+            まだメッセージはありません。
+      .group-blocks
+        .group-name
+          %h3 グループ３
+        .group-text
+          %p
+            まだメッセージはありません。
+  .right-contents
+    .right-contents-top
+      .group
+        .group-name
+          %h2 グループ１
+        .group-member
+          %p
+            member : taro
+      .edit
+        %p
+          Edit
+    .right-contents-middle
+      .message-title
+        %h3 taro
+      .message-text
+    .right-contents-bottom
+      %form
+        %input.text{placeholder: 'type a message', type: 'text'}/
+        %i.fa.fa-picture-o{'aria-hidden': 'true'}
+      .send
+        %p
+          Send
+
+
