@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
 
   def edit
-    user = User.find(params[:id])
-    if user.id == current_user.id
-      user.update(user_params)
   end
 
-  private
-  def user_params
-    redirect_to action: :index
+  def update
+     if current_user.update(user_params)
+       redirect_to root_path
+     elsif
+       render :edit
+     end
   end
+
+  def user_params
+    params[:user].permit(:name, :email)
+  end
+
 end
