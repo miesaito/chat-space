@@ -2,11 +2,10 @@
   .left-contents
     .left-contents-top
       %p USERNAME
-      %p
-        %a{href: ''}
-          %i.fa.fa-cog
-        %a{href: ''}
-          %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
+      = link_to edit_user_path(current_user) do
+        %i.fa.fa-cog
+      %a{href: ''}
+        %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
 
     .left-contents-bottom
       .group-blocks
