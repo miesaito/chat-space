@@ -1,10 +1,11 @@
 .contents.clearfix
   .left-contents
     .left-contents-top
-      %p USERNAME
+      %p
+        = current_user.name
       = link_to edit_user_path(current_user) do
         %i.fa.fa-cog
-      %a{href: ''}
+      = link_to '#' do
         %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
 
     .left-contents-bottom
