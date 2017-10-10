@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def update
      if current_user.update(user_params)
-       redirect_to root_path,  notice: "グループを作成しました"
+       redirect_to root_path
      elsif
        render :edit
      end
