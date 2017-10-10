@@ -18,24 +18,19 @@
       p{
         padding: 40px 20px;
         text-align: left;
-        width: 150px;
-        font-size: 16px;
-        float: right;
-      }
-      p{
         width: 110px;
+        font-size: 16px;
         float: left;
-        a{
-          .fa-cog{
-            color: $whitecolor;
-            display: inline-block;
-          }
+      }
+      a{
+        .fa-cog:before{
+          color: $whitecolor;
+          display: inline-block;
+          padding-top: 40px;
         }
-        a{
-          .fa-pencil-square-o{
-            color: $whitecolor;
-            display: inline-block;
-          }
+        .fa-pencil-square-o{
+          color: $whitecolor;
+          display: inline-block;
         }
       }
     }
