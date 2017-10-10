@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root  'messages#index'
   resources :messages
   resources :users, only: %i(edit update)
-  resources :groups, only: %i(show new create edit)
+  resources :groups, only: %i(show new create edit update)
 end
