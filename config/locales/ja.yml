@@ -1,2 +1,5 @@
-ja:
- name: 名前
+  ja:
+     activerecord:
+       attributes:
+            group:
+             name: グループ名
