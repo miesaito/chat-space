@@ -9,9 +9,7 @@
         %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
 
     .left-contents-bottom
-      - current_user.groups.each do |group|
-        = render partial: "messages", locals: { group: group }
-
+      = render @groups
 
   .right-contents
     .right-contents-top
