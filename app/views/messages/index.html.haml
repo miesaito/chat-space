@@ -5,28 +5,12 @@
         = current_user.name
       = link_to edit_user_path(current_user) do
         %i.fa.fa-cog
-      = link_to '#' do
+      = link_to new_group_path do
         %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
 
     .left-contents-bottom
-      .group-blocks
-        .group-name
-          %h3 グループ１
-        .group-text
-          %p
-            まだメッセージはありません。
-      .group-blocks
-        .group-name
-          %h3 グループ２
-        .group-text
-          %p
-            まだメッセージはありません。
-      .group-blocks
-        .group-name
-          %h3 グループ３
-        .group-text
-          %p
-            まだメッセージはありません。
+      = render @groups
+
   .right-contents
     .right-contents-top
       .group
