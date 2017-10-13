@@ -1,0 +1,37 @@
+.contents.clearfix
+  .left-contents
+    .left-contents-top
+      %p
+        = current_user.name
+      = link_to edit_user_path(current_user) do
+        %i.fa.fa-cog
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
+
+    .left-contents-bottom
+      = render @groups
+
+  .right-contents
+    .right-contents-top
+      .group
+        .group-name
+          %h2 グループ１
+        .group-member
+          %p
+            member : taro
+      .edit
+        %p
+          Edit
+    .right-contents-middle
+      .message-title
+        %h3 taro
+      .message-text
+    .right-contents-bottom
+      %form
+        %input.text{placeholder: 'type a message', type: 'text'}/
+        %i.fa.fa-picture-o{'aria-hidden': 'true'}
+      .send
+        %p
+          Send
+
+

@@ -4,6 +4,9 @@ class MessagesController < ApplicationController
   @groups = current_user.groups
   end
 
-  def edit
+  def new
+  end
+
+  def create
   end
 end
