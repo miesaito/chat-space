@@ -1,5 +1,15 @@
   ja:
      activerecord:
+       models:
+         message: メッセージ
+         group: グループ
+         user: ユーザー
        attributes:
-            group:
+         user:
+           email: Eメール
+           name: 名前
+         message:
+            text: テキスト
+            image: 画像
+         group:
              name: グループ名
