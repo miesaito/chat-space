@@ -11,27 +11,3 @@
     .left-contents-bottom
       = render @groups
 
-  .right-contents
-    .right-contents-top
-      .group
-        .group-name
-          %h2 グループ１
-        .group-member
-          %p
-            member : taro
-      .edit
-        %p
-          Edit
-    .right-contents-middle
-      .message-title
-        %h3 taro
-      .message-text
-    .right-contents-bottom
-      %form
-        %input.text{placeholder: 'type a message', type: 'text'}/
-        %i.fa.fa-picture-o{'aria-hidden': 'true'}
-      .send
-        %p
-          Send
-
-
