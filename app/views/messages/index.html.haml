@@ -19,7 +19,8 @@
             = @group.name
         .group-member
           %p
-            member : taro
+            member:
+            = @group.users.pluck(:name).join(" ")
       .edit
         %p
           Edit
