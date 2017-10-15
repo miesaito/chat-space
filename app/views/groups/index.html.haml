@@ -1,0 +1,13 @@
+.contents.clearfix
+  .left-contents
+    .left-contents-top
+      %p
+        = current_user.name
+      = link_to edit_user_path(current_user) do
+        %i.fa.fa-cog
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
+
+    .left-contents-bottom
+      = render @groups
+

@@ -43,8 +43,9 @@
 
      .group-blocks{
        background-color: $sidecolor;
-       width: 300px;
-       height: 100px;
+       width: 260px;
+       height: 46px;
+       padding: 20px 0 40px;
        display: block;
        clear: both;
 
@@ -137,23 +138,27 @@
         margin: 0 10px 0 0;
         float: left;
       }
-        .fa-picture-o {
-         position: absolute;
-         right: 190px;
-         top: 40px;
+        label{
+          .fa-picture-o {
+           position: absolute;
+           right: 190px;
+           top: 40px;
+          }
+          .message_image{
+            display:none;
+          }
         }
 
-
-      .send{
+      .send {
         background-color: #38AEF0;
+        color: $whitecolor;
         float: right;
         margin: 0 0 0 10px;
         padding: 0px 30px;
         height: 50px;
-        p{
-         text-align: center;
-         padding: 10px 0;
-        }
+        width: 100px;
+        text-align: center;
+        border: 0px;
       }
     }
   }

@@ -9,29 +9,29 @@
         %i.fa.fa-pencil-square-o{'aria-hidden': 'true'}
 
     .left-contents-bottom
-      = render @groups
+      = render partial: "groups/group", collection: @groups
 
   .right-contents
     .right-contents-top
       .group
         .group-name
-          %h2 グループ１
+          %h2
+            = @group.name
         .group-member
           %p
-            member : taro
+            member:
+            = @group.users.pluck(:name).join(" ")
       .edit
         %p
           Edit
     .right-contents-middle
       .message-title
-        %h3 taro
+        //%h3 taro
       .message-text
     .right-contents-bottom
-      %form
-        %input.text{placeholder: 'type a message', type: 'text'}/
-        %i.fa.fa-picture-o{'aria-hidden': 'true'}
-      .send
-        %p
-          Send
-
-
+      = form_for [@group, @message] do |f|
+        = f.text_field :text, placeholder: 'type a message', class: "text"
+        %label
+          .fa.fa-picture-o{'aria-hidden': 'true'}
+          = f.file_field :image, class: "message_image"
+        = f.submit "Send", class: "send"
