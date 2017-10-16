@@ -21,9 +21,10 @@
           %p
             member:
             = @group.users.pluck(:name).join(" ")
-      .edit
-        %p
-          Edit
+      = link_to edit_group_path(@group.id) do
+        .edit
+          %p
+            Edit
     .right-contents-middle
       - @group.messages.each do |i|
         .message
@@ -34,6 +35,7 @@
               = current_user.created_at.strftime("%Y/%m/%d %H:%M")
           .message-text
             = i.text
+            = image_tag(i.image)
     .right-contents-bottom
       = form_for [@group, @message] do |f|
         = f.text_field :text, placeholder: 'type a message', class: "text"
