@@ -1,5 +1,9 @@
 .group-blocks
+= link_to @group
   .group-name
   = group.name
   .group-text
-
+  - if group.messages.last.present?
+    = group.messages.last.text
+  - else
+    %p 'メッセージを入力してください'
