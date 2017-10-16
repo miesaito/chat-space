@@ -1,5 +1,6 @@
 .group-blocks
-  .group-name
-  = group.name
-  .group-text
-
+  = link_to group_messages_path(group.id) do
+    .group-name
+      = group.name
+    .group-text
+      = group.last_message
