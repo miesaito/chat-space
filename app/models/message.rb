@@ -4,6 +4,8 @@ class Message < ApplicationRecord
 
   mount_uploader :image, ImageUploader
   validates :text_or_image, presence: true
+  validates :user_id, presence: true
+  validates :group_id, presence: true
   private
     def text_or_image
       text.presence or image.presence
