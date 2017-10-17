@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe Message do
-    it "is valid with a message, image" do
+    it "is valid with a text, image" do
       expect(build(:message)).to be_valid
     end
 
-    it "is invalid without a message" do
+    it "is invalid without a text" do
       message = build(:message, text: nil)
       expect(message).to be_valid
     end
