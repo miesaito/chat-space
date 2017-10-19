@@ -3,3 +3,9 @@ FactoryGirl.define do
     name { Faker::Name.name }
   end
 end
+
+FactoryGirl.define do
+  factory :groups do
+    name { Faker::Name.name }
+  end
+end

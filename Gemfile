@@ -64,6 +64,7 @@ gem 'font-awesome-rails'
 gem 'rails-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails-controller-testing'
 
 group :test do
   gem 'faker'
