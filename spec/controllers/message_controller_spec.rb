@@ -2,9 +2,7 @@ require 'rails_helper'
 
 describe MessagesController, type: :controller do
   let(:user) { create(:user) }
-  # let(:group) { create(:group) }
   let(:group) { user.groups.first}
-  # let(:groups) { create(:groups) }
   let(:message) { create(:message) }
 
   describe 'GET #index' do
@@ -14,15 +12,11 @@ describe MessagesController, type: :controller do
     end
 
     it "assigns the requested contact to @group" do
-      # @group = user.groups.first
-      # binding.pry
       get :index, params: { group_id: group.id }
-      # groups = user.groups
       expect(assigns(:group)).to eq group
     end
 
     it "assigns the requested contact to @message" do
-      # message = Message.new
       get :index, params: { group_id: group }
       expect(assigns(:message)).to be_a_new(Message)
     end
@@ -30,14 +24,11 @@ describe MessagesController, type: :controller do
     it "assigns the requested contact to @groups " do
       get :index, params: { group_id: group.id }
       groups = user.groups
-      # binding.pry
       expect(assigns(:groups)).to eq groups
     end
 
     it "renders the :index template" do
       get :index, params: { group_id: group.id }
-      # message = index(:messages)
-      # get :index, params: { group_id: group }
       expect(response).to render_template :index
     end
 
