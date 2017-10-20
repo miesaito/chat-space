@@ -8,6 +8,6 @@ class Message < ApplicationRecord
   validates :group_id, presence: true
   private
     def text_or_image
-      text.presence or image.presence
+      text.presence || image.presence
     end
 end
