@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function(){
 
   var message_text = $(".right-contents-middle");
-  // var submit_bottun = $(".send");
 
   function appendProduct(message) {
     var image = (message.image.url) ? `<img src = ${ message.image.url }>` : "";
@@ -19,7 +18,6 @@ $(document).on('turbolinks:load', function(){
                     ${ image }
                   </div>
                 </div>`
-    // message_text.append(html);
     return html
   }
 
@@ -27,7 +25,6 @@ $(document).on('turbolinks:load', function(){
     e.preventDefault();
     var formData = new FormData(this);
     var input = $('this').attr('action')
-    // var scroll_point = $('#new_message').offset().top;
     $.ajax({
       type: 'POST',
       url: input,
@@ -38,18 +35,12 @@ $(document).on('turbolinks:load', function(){
     })
 
     .done(function(data){
-      console.log(data)
       var html = appendProduct(data);
       $('.right-contents-middle').append(html)
       $('.send').removeAttr('disabled');
       $('.right-contents-middle').animate({scrollTop: $('.right-contents-middle')[0].scrollHeight}, 'fast');
       $('.text').val('');
-      // $('message').delay(100).animate({
-      //   scrollTop: $(data).height()
-      //   },1500);
-      //   setTimeout(function() {
-      //   window.scroll(0,$(document).height());
-      //   },0);
+      $('.message_image').val('');
     })
     .fail(function() {
       alert('送信失敗しました');

@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_group, only:[:index, :create ]
   def index
-    # binding.pry
     @groups = current_user.groups
     @message = Message.new
   end
