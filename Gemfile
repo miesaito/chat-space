@@ -65,6 +65,7 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails-controller-testing'
+gem 'jquery-turbolinks'
 
 group :test do
   gem 'faker'
