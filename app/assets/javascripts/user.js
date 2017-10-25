@@ -24,8 +24,7 @@ $(document).on('turbolinks:load', function(){
           if (users.length !== 0) {
             $.each(users,function(index,val){
               html = appendProduct(val)
-            $('.js-add').append(html);
-            // console.log(html);
+            $('.chat_group-form__search').append(html);
             });
           }
         })
@@ -43,14 +42,15 @@ $(document).on('turbolinks:load', function(){
         $('.user-search-result-add').append(html);
     }
     $(".chat-group-form").on("click", '.user-search-add', function(){
-      $(".user-search-result-add").remove(":contains('user.id')");
+      // $(".user-search-result-add").remove(":contains('user.id')");
+      $(this).parent().remove();
       var id = $(this).data('user-id');
       var name = $(this).data('user-name');
       appendRemove(id, name);
     });
     $(".chat-group-form").on("click", '.user-search-remove ', function(){
-      $(".js-chat-member").remove();
-      var id = $(this).data('user-id');
-      var name = $(this).data('user-name');
+      $(this).parent().remove();
+      // var id = $(this).data('user-id');
+      // var name = $(this).data('user-name');
   });
 });
