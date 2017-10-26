@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function(){
 
   function appendProduct(message) {
     var image = (message.image.url) ? `<img src = ${ message.image.url }>` : "";
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message-top">
                     <div class="message-name">
                       ${ message.name }
@@ -46,5 +46,29 @@ $(document).on('turbolinks:load', function(){
       alert('送信失敗しました');
     });
   });
+
+    setInterval(function(){
+      console.log("aa")
+      var message = $('.message').last().data('message-id');
+
+      var url = $(location).attr('href')
+
+      $.ajax({
+        type: 'GET',
+        url: url,
+        data: { id: message},
+        dataType: 'json'
+      })
+
+      .done(function(data){
+        data.forEach(function(message){
+          var html = appendProduct(message);
+        $('.right-contents-middle').append(html);
+        $('.send').removeAttr('disabled');
+        $('.right-contents-middle').animate({scrollTop: $('.right-contents-middle')[0].scrollHeight}, 'fast');
+        })
+      })
+    },5000);
+
 });
 
