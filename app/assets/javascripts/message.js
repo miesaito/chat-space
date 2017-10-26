@@ -48,7 +48,6 @@ $(document).on('turbolinks:load', function(){
   });
 
     setInterval(function(){
-      console.log("aa")
       var message = $('.message').last().data('message-id');
 
       var url = $(location).attr('href')
